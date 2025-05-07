@@ -10,23 +10,26 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            
-            
             HStack{
                 Button("", systemImage: "gearshape.fill"){
                     print("Play")
                 }
                 .padding()
-                .position()
                 .font(.system(size: 50, weight: .regular, design: .default))
-                .foregroundColor(.black)
+                .foregroundColor(Color.bluePrimary)
                 
-                Text("Stoma Training")
-                    .font(.system(size: 60, weight: .bold, design: .default))
-                    .padding()
+                Spacer()
             }
-            .background(Color(red: 208, green: 247, blue: 245))
-            .padding()
+            
+            Image("logo")
+                  .resizable()
+                  .aspectRatio(contentMode: .fit)
+                  .frame(maxWidth: 500, maxHeight: 300)
+                  .padding()
+                  //.border(Color.black)
+            
+            Spacer()
+
             
             Button(" Play ", systemImage: "play.fill"){
                 print("Play")
@@ -34,21 +37,28 @@ struct ContentView: View {
             .padding()
             .font(.system(size: 50, weight: .regular, design: .default))
             .foregroundColor(.white)
-            .background(Color(red: 0, green: 89, blue: 84))
+            .background(Color.bluePrimary)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding()
             
-            Button(" Tools ", systemImage: "gearshape.fill"){
+            Button(" Tools ", systemImage: "cross.case"){
                 print("Play")
             }
             .padding()
             .font(.system(size: 50, weight: .regular, design: .default))
             .foregroundColor(.white)
-            .background(Color(red: 0, green: 89, blue: 84))
+            .background(Color.bluePrimary)
             .clipShape(RoundedRectangle(cornerRadius: 10))
+            
+            Spacer()
         }
         .padding()
         .background(Color(red: 208, green: 247, blue: 245))
+        
+        Spacer()
+        
+        
+        
     }
 }
 
