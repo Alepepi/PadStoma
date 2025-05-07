@@ -54,11 +54,23 @@ struct ContentView: View {
         }
         .padding()
         .background(Color(red: 208, green: 247, blue: 245))
-        
-        Spacer()
-        
-        
-        
+        .overlay {
+            Image("Nurse")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 600, maxHeight: 400)
+                .padding()
+                .offset(x: 450, y: 100)
+        }
+        .overlay {
+            Image("StomaBag")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 300, maxHeight: 200)
+                .padding()
+                .offset(x: -350, y: -300)
+        }
+                
     }
 }
 
