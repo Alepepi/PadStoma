@@ -1,10 +1,3 @@
-//
-//  PadStomaApp.swift
-//  PadStoma
-//
-//  Created by Alejandro Ollivier Ochoa on 5/6/25.
-//
-
 import SwiftUI
 
 @main
