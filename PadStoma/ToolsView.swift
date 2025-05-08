@@ -8,8 +8,8 @@ struct InfoItem: Identifiable {
 
 struct ToolsView: View {
     let columns = [
-        GridItem(.flexible())
-        GridItem(.flexible())
+        GridItem(.flexible()),
+        GridItem(.flexible()),
     ]
 
     let items: [InfoItem] = [
