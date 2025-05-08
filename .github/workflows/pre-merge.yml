@@ -18,11 +18,11 @@ jobs:
     - name: Run SwiftLint
       run: swiftlint --strict
 
-    - name: Install SwiftFormat
-      run: brew install swiftformat
-
     - name: Check formatting with SwiftFormat
       run: swiftformat . --lint --swiftversion 6.4 --disable trailingCommas
+
+    - name: Debug for folder structure in github runner
+      run: ls -la
 
     - name: Build with Xcode
       run: |
