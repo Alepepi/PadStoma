@@ -34,7 +34,7 @@ jobs:
         xcodebuild clean build \
           -project PadStoma.xcodeproj \
           -scheme PadStoma \
-          -destination "platform=iOS Simulator,name=Any iOS Simulator Device,IOS=18.2" \
+          -destination "platform=iOS Simulator,name=Any iOS Simulator Device" \
           CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 
 # To add later when tests are available
