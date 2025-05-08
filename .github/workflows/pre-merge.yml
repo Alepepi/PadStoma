@@ -33,6 +33,9 @@ jobs:
       run: |
         xcodebuild clean build \
           -project PadStoma.xcodeproj \
+          -scheme PadStoma \
+          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO \
+          IPHONEOS_DEPLOYMENT_TARGET=18.2
 
 # To add later when tests are available
 #    - name: Run tests
