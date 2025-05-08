@@ -29,6 +29,9 @@ jobs:
     - name: Debug for folder structure in github runner
       run: ls -la
 
+    - name: xcrun simctl list
+      run: xcrun simctl list devices
+
     - name: Build with Xcode
       run: |
         xcodebuild clean build \
