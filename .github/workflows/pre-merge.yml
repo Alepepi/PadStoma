@@ -22,7 +22,7 @@ jobs:
       run: brew install swiftformat
 
     - name: Check formatting with SwiftFormat
-      run: swiftformat . --lint --swiftversion 6.4
+      run: swiftformat . --lint --swiftversion 6.4 --disable trailingCommas
 
     - name: Build with Xcode
       run: |
