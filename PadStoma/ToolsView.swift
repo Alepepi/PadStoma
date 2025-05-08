@@ -20,7 +20,7 @@ struct ToolsView: View {
         InfoItem(title: "Stoma Care", description: "Detailed info about stoma care."),
         InfoItem(title: "Nutrition", description: "Tips on what to eat and avoid."),
         InfoItem(title: "Supplies", description: "List of needed supplies."),
-        InfoItem(title: "Emergency", description: "What to do in an emergency."),
+        InfoItem(title: "Emergency", description: "What to do in an emergency.")
     ]
 
     @State private var selectedItem: InfoItem?
