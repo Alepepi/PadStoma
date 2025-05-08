@@ -1,0 +1,37 @@
+name: Xcode CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-check:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install SwiftLint
+      run: brew install swiftlint
+
+    - name: Run SwiftLint
+      run: swiftlint --strict
+
+    - name: Install SwiftFormat
+      run: brew install swiftformat
+
+    - name: Check formatting with SwiftFormat
+      run: swiftformat . --lint --swiftversion 6.4
+
+    - name: Build with Xcode
+      run: |
+        xcodebuild clean build \
+          -project PadStoma.xcodeproj \
+          -scheme PadStoma \
+          -destination 'platform=iOS Simulator,name=iPad Pro 13-inch (M4),OS=18.4' \
+          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+
+# To add later when tests are available
+#    - name: Run tests
+#      run: swift test

@@ -9,7 +9,7 @@ struct PlayView: View {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
                     Button(action: {
                         router.path.append(.colostony)
-                    }) {
+                    }, label: {
                         Text("Colostomy")
                             .font(.headline)
                             .foregroundColor(.white)
@@ -18,11 +18,11 @@ struct PlayView: View {
                             .background(Color.blue)
                             .cornerRadius(12)
                             .shadow(radius: 5)
-                    }
+                    })
 
                     Button(action: {
                         // Disabled for now
-                    }) {
+                    }, label: {
                         Text("Ileostomy")
                             .font(.headline)
                             .foregroundColor(.gray)
@@ -31,7 +31,7 @@ struct PlayView: View {
                             .background(Color.gray.opacity(0.5))
                             .cornerRadius(12)
                             .shadow(radius: 5)
-                    }
+                    })
                     .disabled(true)
                 }
                 .padding()
