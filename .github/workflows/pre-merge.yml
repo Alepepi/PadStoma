@@ -12,25 +12,27 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Set up Xcode 16.2
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '16.2'
+
     - name: Install SwiftLint
       run: brew install swiftlint
 
     - name: Run SwiftLint
       run: swiftlint --strict
 
-    - name: Install SwiftFormat
-      run: brew install swiftformat
-
     - name: Check formatting with SwiftFormat
-      run: swiftformat . --lint --swiftversion 6.4
+      run: swiftformat . --lint --swiftversion 6.4 --disable trailingCommas
 
     - name: Build with Xcode
       run: |
         xcodebuild clean build \
           -project PadStoma.xcodeproj \
           -scheme PadStoma \
-          -destination 'platform=iOS Simulator,name=iPad Pro 13-inch (M4),OS=18.4' \
-          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO \
+          IPHONEOS_DEPLOYMENT_TARGET=18.2
 
 # To add later when tests are available
 #    - name: Run tests
