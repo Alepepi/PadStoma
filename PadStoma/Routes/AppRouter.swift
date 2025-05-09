@@ -12,11 +12,11 @@ class NavigationRouter: ObservableObject {
     func destination(for route: Route) -> AnyView {
         switch route {
         case .play:
-            return AnyView(PlayView())
+            AnyView(PlayView())
         case .tools:
-            return AnyView(ToolsView())
+            AnyView(ToolsView())
         case .colostomy:
-            return AnyView(ColostomyView())
+            AnyView(ColostomyView())
         }
     }
 }
