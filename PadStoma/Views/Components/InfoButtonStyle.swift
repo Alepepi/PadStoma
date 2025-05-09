@@ -15,9 +15,9 @@ struct InfoButtonStyle: ButtonStyle {
 }
 
 #Preview {
-    Button(action: {}) {
+    Button(action: {}, label: {
         Text("TO TEST THIS BEAUTIFUL BUTTON")
-    }
+    })
     .buttonStyle(InfoButtonStyle())
     .padding()
 }

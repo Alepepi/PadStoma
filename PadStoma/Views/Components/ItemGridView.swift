@@ -14,9 +14,9 @@ struct ItemGridView: View {
             ForEach(items) { item in
                 Button(action: {
                     selectedItem = item
-                }) {
+                }, label: {
                     Text(item.title)
-                }
+                })
                 .buttonStyle(InfoButtonStyle())
                 .frame(maxWidth: .infinity)
             }
