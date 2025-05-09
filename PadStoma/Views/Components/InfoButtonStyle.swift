@@ -7,7 +7,7 @@ struct InfoButtonStyle: ButtonStyle {
             .foregroundColor(.white)
             .padding()
             .frame(maxWidth: .infinity, minHeight: 150)
-            .background(Color.blue)
+            .background(Color.bluePrimary)
             .cornerRadius(12)
             .shadow(radius: 5)
             .opacity(configuration.isPressed ? 0.7 : 1)
