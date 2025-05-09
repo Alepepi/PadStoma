@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var router = NavigationRouter()
+    @EnvironmentObject var router: NavigationRouter
 
     let images = ["StomaBag", "StomaBag2", "StomaBag3"]
     let rotations: [Double] = [-45, -35, 0, 35, 45]
@@ -111,14 +111,7 @@ struct ContentView: View {
                     .offset(x: -350, y: -300)
             }
             .navigationDestination(for: Route.self) { route in
-                switch route {
-                case .play:
-                    PlayView()
-                case .tools:
-                    ToolsView()
-                case .colostony:
-                    ColostonyView()
-                }
+                router.destination(for: route)
             }
         }
         .environmentObject(router)
@@ -126,5 +119,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView().environmentObject(NavigationRouter())
 }

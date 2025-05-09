@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ColostonyView: View {
+struct ColostomyView: View {
     var body: some View {
         VStack {
             Spacer()
@@ -13,10 +13,10 @@ struct ColostonyView: View {
             Spacer()
         }
         .padding()
-        .navigationTitle("Colostony")
+        .navigationTitle("Colostomy")
     }
 }
 
 #Preview {
-    ColostonyView()
+    ColostomyView()
 }
