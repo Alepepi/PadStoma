@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var router: NavigationRouter
+    @State private var toggleRotation = false
 
     let images = ["StomaBag", "StomaBag2", "StomaBag3"]
     let rotations: [Double] = [-45, -35, 0, 35, 45]
@@ -15,16 +16,16 @@ struct ContentView: View {
                     }
                     .padding()
                     .font(.system(size: 50, weight: .regular, design: .default))
-                    .foregroundColor(Color.bluePrimary)
+                    .foregroundColor(Color.white)
 
                     Spacer()
                 }
 
-                Image("VectorStomaDida")
+                Image("Image")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 500)
-                    .padding(.bottom, 100)
+                    .frame(maxWidth: 1000)
+                    .padding(.bottom, 50)
 
                 Button {
                     router.path.append(.play)
@@ -38,14 +39,14 @@ struct ContentView: View {
                 }
                 .padding()
                 .font(.system(size: 50, weight: .regular, design: .default))
-                .foregroundColor(.white)
+                .foregroundColor(.bluePrimary)
                 .frame(width: 350)
-                .background(Color.bluePrimary)
+                .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .overlay {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(.clear)
-                        .stroke(Color.blueSecond, lineWidth: 3)
+                        .stroke(Color.blueSecond, lineWidth: 4)
                 }
                 .padding()
 
@@ -61,54 +62,35 @@ struct ContentView: View {
                 }
                 .padding()
                 .font(.system(size: 50, weight: .regular, design: .default))
-                .foregroundColor(.white)
+                .foregroundColor(.bluePrimary)
                 .frame(width: 350)
-                .background(Color.bluePrimary)
+                .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .overlay {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(.clear)
-                        .stroke(Color.blueSecond, lineWidth: 3)
+                        .stroke(Color.blueSecond, lineWidth: 4)
                 }
                 .padding()
 
                 Spacer()
 
-                ScrollView(.horizontal) {
-                    HStack {
-                        ForEach(images, id: \.self) { imageName in
-                            ForEach(rotations, id: \.self) { angle in
-                                Image(imageName)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .rotationEffect(.degrees(angle))
-                                    .frame(maxWidth: 300, maxHeight: 150)
-                                    .padding()
-
-                                Spacer(minLength: 20)
-                            }
-                        }
-                    }
-                    .padding(.horizontal)
-                }
+                InfiniteCarouselView()
             }
             .padding()
-            .background(Color(red: 208 / 255, green: 247 / 255, blue: 245 / 255))
+            .background(Color.bluePrimary)
+            .onAppear {
+                Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                    toggleRotation.toggle()
+                }
+            }
             .overlay {
                 Image("Nurse")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 600, maxHeight: 400)
+                    .frame(maxWidth: 400, maxHeight: 300)
                     .padding()
-                    .offset(x: 450, y: 100)
-            }
-            .overlay {
-                Image("StomaBag")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 300, maxHeight: 200)
-                    .padding()
-                    .offset(x: -350, y: -300)
+                    .offset(x: 450, y: 65)
             }
             .navigationDestination(for: Route.self) { route in
                 router.destination(for: route)
