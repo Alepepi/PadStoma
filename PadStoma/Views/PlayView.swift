@@ -9,7 +9,7 @@ struct PlayView: View {
             ItemGridView(
                 items: [
                     InfoItem(title: "Colostomy", description: ""),
-                    InfoItem(title: "Ileostomy", description: "")
+                    InfoItem(title: "Ileostomy", description: ""),
                 ],
                 selectedItem: $selectedItem
             )

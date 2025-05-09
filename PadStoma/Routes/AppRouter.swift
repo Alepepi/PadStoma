@@ -8,7 +8,7 @@ enum Route: Hashable {
 
 class NavigationRouter: ObservableObject {
     @Published var path: [Route] = []
-    
+
     func destination(for route: Route) -> AnyView {
         switch route {
         case .play:
