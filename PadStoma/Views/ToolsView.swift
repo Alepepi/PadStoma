@@ -11,9 +11,9 @@ struct ToolsView: View {
         InfoItem(title: "Supplies", description: "List of needed supplies."),
         InfoItem(title: "Emergency", description: "What to do in an emergency.")
     ]
-    
-    @State private var selectedItem: InfoItem? = nil
-    
+
+    @State private var selectedItem: InfoItem?
+
     var body: some View {
         ScrollView {
             ItemGridView(items: items, selectedItem: $selectedItem)
