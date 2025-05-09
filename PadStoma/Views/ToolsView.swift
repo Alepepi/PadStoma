@@ -1,17 +1,6 @@
 import SwiftUI
 
-struct InfoItem: Identifiable {
-    let id = UUID()
-    let title: String
-    let description: String
-}
-
 struct ToolsView: View {
-    let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-    ]
-
     let items: [InfoItem] = [
         InfoItem(title: "Stoma Care", description: "Detailed info about stoma care."),
         InfoItem(title: "Nutrition", description: "Tips on what to eat and avoid."),
@@ -20,33 +9,14 @@ struct ToolsView: View {
         InfoItem(title: "Stoma Care", description: "Detailed info about stoma care."),
         InfoItem(title: "Nutrition", description: "Tips on what to eat and avoid."),
         InfoItem(title: "Supplies", description: "List of needed supplies."),
-        InfoItem(title: "Emergency", description: "What to do in an emergency.")
+        InfoItem(title: "Emergency", description: "What to do in an emergency."),
     ]
 
     @State private var selectedItem: InfoItem?
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(items) { item in
-                    Button(action: {
-                        selectedItem = item
-                    }, label: {
-                        VStack {
-                            Text(item.title)
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(maxWidth: .infinity, minHeight: 150)
-                                .background(Color.blue)
-                                .cornerRadius(12)
-                                .shadow(radius: 5)
-                        }
-                    })
-                    .frame(maxWidth: .infinity)
-                }
-            }
-            .padding()
+            ItemGridView(items: items, selectedItem: $selectedItem)
         }
         .navigationTitle("Health Info")
         .sheet(item: $selectedItem) { item in
