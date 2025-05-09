@@ -16,7 +16,10 @@ struct ToolsView: View {
 
     var body: some View {
         ScrollView {
-            ItemGridView(items: items, selectedItem: $selectedItem)
+            ItemGridView(
+                items: items,
+                selectedItem: $selectedItem
+            )
         }
         .navigationTitle("Health Info")
         .sheet(item: $selectedItem) { item in
