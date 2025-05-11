@@ -17,7 +17,8 @@ struct ChatBotOverlay: View {
                         if currentStep < steps.count - 1 {
                             currentStep+=1
                         }
-                    }) {
+                    })
+                    {
                         Text("Next")
                             .font(.system(size: 17, weight: .bold))
                             .foregroundColor(.blue)
