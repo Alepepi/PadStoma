@@ -1,6 +1,22 @@
 import SwiftUI
 
+struct InventoryItem: Identifiable {
+    var id: UUID = UUID()
+    var name: String
+    var imageName: String
+}
+
+class InventoryViewModel: ObservableObject {
+    @Published var items: [InventoryItem] = [
+        InventoryItem(name: "Colostomy Bag", imageName: "StomaBag"),
+        InventoryItem(name: "Colostomy Bag", imageName: "StomaBag"),
+        InventoryItem(name: "Colostomy Bag", imageName: "StomaBag")
+    ]
+}
+
 struct ColostomyView: View {
+    @ObservedObject private var viewModel = InventoryViewModel()
+    
     var body: some View {
         VStack {
             Spacer()
@@ -11,6 +27,30 @@ struct ColostomyView: View {
                 .frame(maxWidth: 300, maxHeight: 300)
 
             Spacer()
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 16) {
+                    ForEach(viewModel.items) { item in
+                        VStack {
+                            Image(item.imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 100, height: 100)
+                                .background(Color.white.opacity(0.2))
+                                .cornerRadius(8)
+                            
+                            Text(item.name)
+                                .font(.caption)
+                                .foregroundColor(.white)
+                        }
+                    }
+                }
+                .padding(.horizontal)
+             }
+            .padding()
+            .background(Color.bluePrimary)
+            .cornerRadius(20)
+            .padding()
         }
         .padding()
         .navigationTitle("Colostomy")
