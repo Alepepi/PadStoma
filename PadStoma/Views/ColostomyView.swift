@@ -16,7 +16,6 @@ class InventoryViewModel: ObservableObject {
 
 struct ColostomyView: View {
     @ObservedObject private var viewModel = InventoryViewModel()
-    
     var body: some View {
         VStack {
             Spacer()
@@ -27,7 +26,6 @@ struct ColostomyView: View {
                 .frame(maxWidth: 300, maxHeight: 300)
 
             Spacer()
-            
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
                     ForEach(viewModel.items) { item in
@@ -38,7 +36,6 @@ struct ColostomyView: View {
                                 .frame(width: 100, height: 100)
                                 .background(Color.white.opacity(0.2))
                                 .cornerRadius(8)
-                            
                             Text(item.name)
                                 .font(.caption)
                                 .foregroundColor(.white)
