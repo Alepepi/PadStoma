@@ -13,8 +13,7 @@ struct ChatBotOverlay: View {
                         .cornerRadius(20)
                         .font(.body)
                         .transition(.slide)
-                    Button(action: {
-                        if currentStep < steps.count - 1 {currentStep+=1}}) {
+                    Button(action: {if currentStep < steps.count - 1 {currentStep+=1}}) {
                         Text("Next")
                             .font(.system(size: 17, weight: .bold))
                             .foregroundColor(.blue)
