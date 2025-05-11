@@ -24,11 +24,7 @@ jobs:
       run: swiftlint --strict
 
     - name: Check formatting with SwiftFormat
-<<<<<<< HEAD
-      run: swiftformat . --lint --swiftversion 6.4 --disable trailingCommas, redundantType
-=======
-      run: swiftformat . --lint --swiftversion 6.4 --disable trailingCommas, reredundantType
->>>>>>> 148b76f842aefb20981f894258b5f3b9d9991ac8
+      run: swiftformat . --lint --swiftversion 6.4 --disable trailingCommas, reredundantTypes
 
     - name: Build with Xcode
       run: |
