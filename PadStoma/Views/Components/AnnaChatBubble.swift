@@ -7,8 +7,6 @@ struct ChatBotOverlay: View {
     
     var body: some View {
         VStack {
-            Spacer()
-            
             HStack(alignment: .center, spacing: 16) {
                 VStack(alignment: .leading) {
                     Text(steps[currentStep])

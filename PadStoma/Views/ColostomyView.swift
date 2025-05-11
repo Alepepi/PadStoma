@@ -27,43 +27,49 @@ struct ColostomyView: View {
     ]
     
     var body: some View {
-        VStack {
-            Spacer()
-
-            Image("Union")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: 300, maxHeight: 300)
-
-            Spacer()
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 16) {
-                    ForEach(viewModel.items) { item in
-                        VStack {
-                            Image(item.imageName)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 100, height: 100)
-                                .background(Color.white.opacity(0.2))
-                                .cornerRadius(8)
-                            Text(item.name)
-                                .font(.caption)
-                                .foregroundColor(.white)
+        ZStack {
+            VStack {
+                Spacer()
+                
+                Image("Union")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 300, maxHeight: 300)
+                
+                Spacer()
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 16) {
+                        ForEach(viewModel.items) { item in
+                            VStack {
+                                Image(item.imageName)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 100, height: 100)
+                                    .background(Color.white.opacity(0.2))
+                                    .cornerRadius(8)
+                                Text(item.name)
+                                    .font(.caption)
+                                    .foregroundColor(.white)
+                            }
                         }
                     }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
+                .padding()
+                .background(Color.bluePrimary)
+                .cornerRadius(20)
+                .padding()
             }
-            .padding()
-            .background(Color.bluePrimary)
-            .cornerRadius(20)
-            .padding()
         }
+        .overlay(
+            ChatBotOverlay(steps: colostomySteps)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.bottom, 200)
+                .padding(.trailing, 16), alignment: .leading
+        )
+        
         .padding()
         .navigationTitle("Colostomy")
-        .overlay{
-            ChatBotOverlay(steps: colostomySteps)
-        }
     }
 }
 
