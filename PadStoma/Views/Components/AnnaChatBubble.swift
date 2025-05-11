@@ -13,12 +13,16 @@ struct ChatBotOverlay: View {
                         .cornerRadius(20)
                         .font(.body)
                         .transition(.slide)
-                    Button(action: {if currentStep < steps.count - 1 {currentStep+=1}}) {
+                    Button(action: {
+                        if currentStep < steps.count - 1 {
+                            currentStep+=1
+                        }
+                    },label: {
                         Text("Next")
                             .font(.system(size: 17, weight: .bold))
                             .foregroundColor(.blue)
                             .padding(.top, 4)
-                    }
+                    })
                 }
                 Image("Nurse")
                     .resizable()
