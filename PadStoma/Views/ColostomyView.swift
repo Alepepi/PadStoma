@@ -16,6 +16,16 @@ class InventoryViewModel: ObservableObject {
 
 struct ColostomyView: View {
     @ObservedObject private var viewModel = InventoryViewModel()
+    
+    let colostomySteps = [
+        "Step 1: Wash your hands thoroughly.",
+        "Step 2: Gather all necessary supplies.",
+        "Step 3: Gently remove the used pouch.",
+        "Step 4: Clean the stoma and surrounding skin.",
+        "Step 5: Apply a new pouch securely.",
+        "Step 6: Dispose of used materials and wash hands again."
+    ]
+    
     var body: some View {
         VStack {
             Spacer()
@@ -51,6 +61,9 @@ struct ColostomyView: View {
         }
         .padding()
         .navigationTitle("Colostomy")
+        .overlay{
+            ChatBotOverlay(steps: colostomySteps)
+        }
     }
 }
 

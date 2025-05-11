@@ -3,26 +3,13 @@ import SwiftUI
 struct ChatBotOverlay: View {
     @State private var currentStep: Int = 0
     
-    let steps = [
-        "Step 1: Wash your hands thoroughly.",
-        "Step 2: Gather all necessary supplies.",
-        "Step 3: Gently remove the used pouch.",
-        "Step 4: Clean the stoma and surrounding skin.",
-        "Step 5: Apply a new pouch securely.",
-        "Step 6: Dispose of used materials and wash hands again."
-    ]
+    let steps: [String]
     
     var body: some View {
         VStack {
             Spacer()
             
-            HStack(alignment: .bottom, spacing: 16) {
-                Image("Nurse")
-                    .resizable()
-                    .frame(width: 60, height: 60)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                    .shadow(radius: 4)
+            HStack(alignment: .center, spacing: 16) {
                 VStack(alignment: .leading) {
                     Text(steps[currentStep])
                         .padding(10)
@@ -36,17 +23,24 @@ struct ChatBotOverlay: View {
                         }
                     }) {
                         Text("Next")
-                            .font(.caption)
+                            .font(.system(size: 17, weight: .bold))
                             .foregroundColor(.blue)
                             .padding(.top, 4)
                     }
                 }
-                Spacer()
+                Image("Nurse")
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                    .shadow(radius: 4)
+                
             }
             .padding()
-            .background(Color.bluePrimary)
         }
     }
 }
 
-
+#Preview {
+    ColostomyView()
+}
