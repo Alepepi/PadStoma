@@ -43,7 +43,7 @@ struct ColostomyView: View {
                     }
                 }
                 .padding(.horizontal)
-             }
+            }
             .padding()
             .background(Color.bluePrimary)
             .cornerRadius(20)
