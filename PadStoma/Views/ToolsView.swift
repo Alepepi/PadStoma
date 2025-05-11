@@ -16,7 +16,7 @@ struct ToolsView: View {
         ),
         InfoItem(
             title: "One-Piece Drainable Stoma Bag",
-            description: "A combined pouch and skin barrier system that collects stool or urine. It can be emptied without removal."
+            description: "A combined pouch and barrier that collects output and can be emptied without removal."
         ),
         InfoItem(
             title: "Modeling Paste/Barrier Ring",
@@ -24,7 +24,7 @@ struct ToolsView: View {
         ),
         InfoItem(
             title: "Adhesive Spray/Remover",
-            description: "Adhesive spray helps the barrier stick better. Remover spray gently lifts adhesives without irritating the skin."
+            description: "Spray for better adhesion or to gently remove the barrier without skin irritation."
         ),
         InfoItem(
             title: "?",
