@@ -15,7 +15,7 @@ struct ChatBotOverlay: View {
                         .transition(.slide)
                     Button(action: {
                         if currentStep < steps.count - 1 {
-                            currentStep+=1
+                            currentStep += 1
                         }
                     }, label: {
                         Text("Next")
