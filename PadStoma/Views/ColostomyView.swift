@@ -16,7 +16,6 @@ class InventoryViewModel: ObservableObject {
 
 struct ColostomyView: View {
     @ObservedObject private var viewModel = InventoryViewModel()
-    
     let colostomySteps = [
         "Step 1: Wash your hands thoroughly.",
         "Step 2: Gather all necessary supplies.",
@@ -25,17 +24,14 @@ struct ColostomyView: View {
         "Step 5: Apply a new pouch securely.",
         "Step 6: Dispose of used materials and wash hands again."
     ]
-    
     var body: some View {
         ZStack {
             VStack {
                 Spacer()
-                
                 Image("Union")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 300, maxHeight: 300)
-                
                 Spacer()
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
@@ -67,7 +63,6 @@ struct ColostomyView: View {
                 .padding(.bottom, 200)
                 .padding(.trailing, 16), alignment: .leading
         )
-        
         .padding()
         .navigationTitle("Colostomy")
     }

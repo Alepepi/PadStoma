@@ -2,9 +2,7 @@ import SwiftUI
 
 struct ChatBotOverlay: View {
     @State private var currentStep: Int = 0
-    
     let steps: [String]
-    
     var body: some View {
         VStack {
             HStack(alignment: .center, spacing: 16) {
@@ -32,7 +30,6 @@ struct ChatBotOverlay: View {
                     .clipShape(Circle())
                     .overlay(Circle().stroke(Color.white, lineWidth: 4))
                     .shadow(radius: 4)
-                
             }
             .padding()
         }
