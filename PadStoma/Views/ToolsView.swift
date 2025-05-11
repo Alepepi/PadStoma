@@ -3,36 +3,36 @@ import SwiftUI
 struct ToolsView: View {
     let items: [InfoItem] = [
         InfoItem(
-            title: "Stoma Care",
-            description: "Detailed info about stoma care."
+            title: "Medical Waste Bag",
+            description: "Used to safely dispose of used stoma bags, wipes, and other contaminated materials."
         ),
         InfoItem(
-            title: "Nutrition",
-            description: "Tips on what to eat and avoid."
+            title: "Wipes/Absorbent Cloths",
+            description: "Alcohol-free, used to clean and dry the skin around the stoma before applying a new bag."
         ),
         InfoItem(
-            title: "Supplies",
-            description: "List of needed supplies."
+            title: "Curved Scissors",
+            description: "Used to cut the skin barrier to fit the stoma if using a cut-to-size system."
         ),
         InfoItem(
-            title: "Emergency",
-            description: "What to do in an emergency."
+            title: "One-Piece Drainable Stoma Bag",
+            description: "A combined pouch and barrier that collects output and can be emptied without removal."
         ),
         InfoItem(
-            title: "Stoma Care",
-            description: "Detailed info about stoma care."
+            title: "Modeling Paste/Barrier Ring",
+            description: "Applied around the stoma to fill skin creases, prevent leaks, and protect skin."
         ),
         InfoItem(
-            title: "Nutrition",
-            description: "Tips on what to eat and avoid."
+            title: "Adhesive Spray/Remover",
+            description: "Spray for better adhesion or to gently remove the barrier without skin irritation."
         ),
         InfoItem(
-            title: "Supplies",
-            description: "List of needed supplies."
+            title: "?",
+            description: "?"
         ),
         InfoItem(
-            title: "Emergency",
-            description: "What to do in an emergency."
+            title: "?",
+            description: "?"
         ),
     ]
 
